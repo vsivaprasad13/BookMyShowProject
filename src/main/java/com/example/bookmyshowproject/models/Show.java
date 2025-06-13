@@ -6,17 +6,19 @@ import jakarta.persistence.OneToOne;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Getter
 @Setter
 
 @Entity
-public class Show {
-    @Id
-    private int id;
-    private int startTime;
-    private int endTime;
+public class Show extends BaseModel {
+
+    private Date startTime;
+    private Date endTime;
     private String Movie;
-    @OneToOne(mappedBy = "Screen")
+
+    @OneToOne
     private Screen screen;
 
 

@@ -1,8 +1,8 @@
 package com.example.bookmyshowproject.models;
 
 import com.example.bookmyshowproject.models.enums.Feature;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.databind.ser.Serializers;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,11 +12,14 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Screen {
-    @Id
-    private int Id;
+public class Screen extends BaseModel {
+
     private String name;
-    private List<Seat> seat;
-    private List<Feature> feature;
+    @OneToMany
+    private List<Seat> seats;
+
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
+    private List<Feature> features;
 
 }

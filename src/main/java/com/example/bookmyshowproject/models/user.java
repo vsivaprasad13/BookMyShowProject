@@ -2,6 +2,7 @@ package com.example.bookmyshowproject.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,6 +17,9 @@ public class user {
     private String name;
     private String phoneNumber;
     private String email;
+    private String password;
+
+    @OneToMany
     private List<Booking> booking;
 
 }

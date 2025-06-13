@@ -9,12 +9,11 @@ import lombok.Setter;
 @Setter
 
 @Entity
-public class Seat {
-    @Id
-    private int row;
-    private int column;
-    private int seatId;
-    private String number;
+public class Seat extends BaseModel {
+
+    private int number;
     private String seatType;
+    private int roNumber;
+    private int coNumber;
 
 }

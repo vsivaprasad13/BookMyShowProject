@@ -1,5 +1,5 @@
 package com.example.bookmyshowproject.models.enums;
 
-public enum Status {
+public enum BookingStatus {
     sucessful, failed, pending
 }

@@ -1,8 +1,10 @@
 package com.example.bookmyshowproject.models;
 
-import com.example.bookmyshowproject.models.enums.Status;
+
+import com.example.bookmyshowproject.models.enums.BookingStatus;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +13,13 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Booking {
-    @Id
-    private int bookingID;
-    private Status status;
-    private List<ShowSeat> showSeat;
-    private long amount;
-    private List<Payment> payment;
+public class Booking extends BaseModel {
+    private BookingStatus bookingStatus;
+
+    @OneToMany
+    private List<ShowSeat> showSeats;
+    private int billingAmount;
+
+    @OneToMany
+    private List<Payment> payments;
 }

@@ -2,6 +2,7 @@ package com.example.bookmyshowproject.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,12 +12,13 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Theatre {
+public class Theatre extends BaseModel{
 
-    @Id
-    private int theatre_id;
-    private String theatre_name;
-    private String theatre_address;
-    private String theatre_city;
+
+    private String name;
+    private String address;
+    private String city;
+
+    @OneToMany
     private List<Screen> screen;
 }

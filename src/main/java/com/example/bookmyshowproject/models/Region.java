@@ -2,6 +2,7 @@ package com.example.bookmyshowproject.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,9 +12,9 @@ import java.util.List;
 @Setter
 
 @Entity
-public class Region {
-    @Id
-    private int id;
+public class Region extends BaseModel{
+
     private String name;
+    @OneToMany
     private List<Theatre> theatre;
 }
